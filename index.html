@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Covid-19 India Tracker</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body ng-app="MyApp" ng-controller="MyCtrl" style="background-color: blueviolet; margin: 20px auto;">
+  <div class="container-fluid pt-10 " >
+
+    <div class="jumbotron">
+      <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_0r0csU.json" mode="bounce" background="transparent"  speed="1"  style="width: 100px; height: 100px; margin: 0 auto;" loop  autoplay></lottie-player>
+      <h1 class="text-center">{{title}}</h1>
+      <p>{{para}}</p>
+
+      <div class="row">
+        <div class="col-md-4">
+            <div class="card " style="background-color: gold;">
+             
+              <div class="card-body text-center text-white">
+                <h3>Confirmed Cases</h3>
+                <h3>{{all_data.confirmed.value}}</h3>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white" style="background-color: forestgreen;">
+            <div class="card-body text-center">
+              <h3>Recovered Cases</h3>
+              <h3>{{all_data.recovered.value}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card  text-white" style="background-color: firebrick;">
+            <div class="card-body text-center">
+              <h3>Death Cases</h3>
+              <h3>{{all_data.deaths.value}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input type="text" class="form-control mt-4" placeholder="Enter Country Name" ng-model="c" ng-change="get_c_data()">
+        <div class="container-fluid" ng-if="c_data">
+
+       
+        <h3 class="text-center mt-4 mb-4 text-uppercase">{{c}} STATUS</h3>
+      <div class="row" >
+        <div class="col-md-4">
+            <div class="card" style="background-color: gold;">
+              <div class="card-body text-center text-white">
+                <h3>Confirmed Cases</h3>
+                <h3>{{c_data.confirmed.value}}</h3>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card  text-white" style="background-color: forestgreen;">
+            <div class="card-body text-center">
+              <h3>Recovered Cases</h3>
+              <h3>{{c_data.recovered.value}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white" style="background-color: firebrick;">
+            <div class="card-body text-center">
+              <h3>Death Cases</h3>
+              <h3>{{c_data.deaths.value}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_4FGi6N.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; margin: auto;"  loop  autoplay></lottie-player>
+    </div>
+  </div>
+ 
+
+
+
+
+
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
